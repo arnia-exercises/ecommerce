@@ -1,10 +1,14 @@
-export default function Product ({ id, name, value, image }) {
+export default function Product ({ addToCart, ...product  }) {
+  const { name, value } = product
+
   return (
     <div>
       <img src="" alt="" />
       <div>
-        <div className="checkbox" />
-        <div>R$ {value}</div>
+        <button
+          onClick={() => addToCart(product)}
+        >Adicionar {name} ao carrinho</button>
+        <div>R$ {value} </div>
       </div>
     </div>
   )
